@@ -60,11 +60,28 @@ const removeDataByWaNumber = (waNumber) => {
   }
 };
 
+// Get the current time with WIB (Western Indonesian Time) timezone
+const currentTime = new Date();
+const timezoneOptionsWIB = { timeZone: 'Asia/Jakarta' };
+const currentTimeWIB = new Intl.DateTimeFormat('id-ID', { timeStyle: 'short', ...timezoneOptionsWIB }).format(currentTime);
+
+let timeOfDay;
+
+if (currentTime.getHours() >= 3 && currentTime.getHours() < 9) {
+    timeOfDay = "Pagi"
+} else if (currentTime.getHours() >= 9 && currentTime.getHours() < 15) {
+    timeOfDay = "Siang"
+} else if (currentTime.getHours() >= 15 && currentTime.getHours() < 18) {
+    timeOfDay = "Sore"
+} else {
+    timeOfDay = "Malam"
+}
+
 client.on('message', message => {
   if(message.body === 'hello') {
     message.reply('World');
   }else if(message.body.toLowerCase().replace(/\s/g, '') === 'myprivateproject') {
-    message.reply(`Hai Nidzam's Bot disini silahkan pilih Bot\n*bot-1:* Asah Otak\n*bot-2:* Cak Lontong\n*bot-3:* Family 100\n*bot-4:* Siapakah Aku\n*bot-5:* Susun Kata\n*bot-6:* Tebak Bendera\n*bot-7:* Tebak Gambar\n*bot-8:* Tebak Kabupaten\n*bot-9:* Tebak Kalimat\n*bot-10:* Tebak Kata\n*bot-11:* Tebak Kimia\n*bot-12:* Tebak Lagu\n*bot-13:* Tebak Lirik\n*bot-14:* Tebak Tebakan\n*bot-15:* Tebak Teka-Teki\n*bot-16:* Kata-kata Bucin\n*bot-17:* Kata-kata Motivasi\n*bot-18:* Kata-kata Renungan\n*bot-19:* Kata-kata Truth\n*bot-20:* Kata-kata Dare\n*bot-21:* Quotes\n\n\n*Silahkan tekan 'chat' untuk mengirim pesan...*`);
+    message.reply(`Hai Selamat ${timeOfDay} Nidzam's Bot disini\nSilahkan pilih Bot:\n*bot-1:* Asah Otak\n*bot-2:* Cak Lontong\n*bot-3:* Family 100\n*bot-4:* Siapakah Aku\n*bot-5:* Susun Kata\n*bot-6:* Tebak Bendera\n*bot-7:* Tebak Gambar\n*bot-8:* Tebak Kabupaten\n*bot-9:* Tebak Kalimat\n*bot-10:* Tebak Kata\n*bot-11:* Tebak Kimia\n*bot-12:* Tebak Lagu\n*bot-13:* Tebak Lirik\n*bot-14:* Tebak Tebakan\n*bot-15:* Tebak Teka-Teki\n*bot-16:* Kata-kata Bucin\n*bot-17:* Kata-kata Motivasi\n*bot-18:* Kata-kata Renungan\n*bot-19:* Kata-kata Truth\n*bot-20:* Kata-kata Dare\n*bot-21:* Quotes\n\n\n*Silahkan tekan 'chat' untuk mengirim pesan...*`);
   } else if (message.body.toLowerCase().replace(/\s/g, '') === 'bot-1') {
     const handleChatData = async (err, data) => {
       try {
