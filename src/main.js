@@ -403,9 +403,16 @@ client.on('message', message => {
         }
         const chat = saveTemporaryData(jsonData[randomNumber].link_song, jsonData[randomNumber].jawaban, 'bot-12', message.from, message._data.notifyName, jsonData[randomNumber].deskripsi);
 
-        const media = await MessageMedia.fromUrl(jsonData[randomNumber].link_song, {unsafeMime: true});
+        try {
+          const media = await MessageMedia.fromUrl(jsonData[randomNumber].link_song, {unsafeMime: true});
 
-        message.reply(media)
+          message.reply(media)
+        }
+        catch (err) {
+          throw new Error(err)
+          message.reply('Error while processing data.. Please try again later.');
+        }
+
       } catch (error) {
         console.error('Error in reading tebaklagu.json:', error.message);
         // Handle the error as needed, e.g., reply with an error message to the user
