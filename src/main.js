@@ -2,10 +2,6 @@ const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 const path = require('path');
-const WhatsappUser = require('./models/whatsappUserModel');
-const Chat = require('./models/chatModel');
-const dbConnect = require('./config/dbConnect');
-dbConnect();
 const client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: {
