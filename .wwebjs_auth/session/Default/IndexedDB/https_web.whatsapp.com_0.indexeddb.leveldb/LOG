@@ -1,0 +1,37 @@
+2024/01/11-22:38:39.904 9870 Reusing MANIFEST /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/11-22:38:39.905 9870 Recovering log #909
+2024/01/11-22:38:40.257 9870 Reusing old log /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000909.log 
+2024/01/11-22:40:27.474 9884 Level-0 table #929: started
+2024/01/11-22:40:27.623 9884 Level-0 table #929: 1518927 bytes OK
+2024/01/11-22:40:27.676 9884 Delete type=0 #909
+2024/01/11-22:40:31.696 9858 Compacting 1@0 + 0@1 files
+2024/01/11-22:40:31.801 9858 Generated table #930@0: 18274 keys, 479063 bytes
+2024/01/11-22:40:31.835 9858 Generated table #931@0: 417 keys, 7923 bytes
+2024/01/11-22:40:31.835 9858 Compacted 1@0 + 0@1 files => 486986 bytes
+2024/01/11-22:40:31.885 9858 compacted to: files[ 0 2 14 0 0 0 0 ]
+2024/01/11-22:40:31.886 9858 Delete type=2 #929
+2024/01/11-22:40:37.185 9858 Compacting 1@1 + 10@2 files
+2024/01/11-22:40:37.518 9858 Generated table #932@1: 65960 keys, 2248646 bytes
+2024/01/11-22:40:37.630 9858 Generated table #933@1: 20773 keys, 2195721 bytes
+2024/01/11-22:40:37.776 9858 Generated table #934@1: 1659 keys, 2152057 bytes
+2024/01/11-22:40:37.921 9858 Generated table #935@1: 2480 keys, 2155975 bytes
+2024/01/11-22:40:38.251 9858 Generated table #936@1: 3423 keys, 2175401 bytes
+2024/01/11-22:40:39.015 9858 Generated table #937@1: 22066 keys, 2240024 bytes
+2024/01/11-22:40:39.222 9858 Generated table #938@1: 24373 keys, 2247630 bytes
+2024/01/11-22:40:39.395 9858 Generated table #939@1: 7035 keys, 2132399 bytes
+2024/01/11-22:40:39.635 9858 Generated table #940@1: 61448 keys, 2199101 bytes
+2024/01/11-22:40:39.953 9858 Generated table #941@1: 104885 keys, 2256722 bytes
+2024/01/11-22:40:39.998 9858 Generated table #942@1: 8838 keys, 192501 bytes
+2024/01/11-22:40:39.998 9858 Compacted 1@1 + 10@2 files => 22196177 bytes
+2024/01/11-22:40:40.077 9858 compacted to: files[ 0 1 15 0 0 0 0 ]
+2024/01/11-22:40:40.077 9858 Delete type=2 #919
+2024/01/11-22:40:40.077 9858 Delete type=2 #913
+2024/01/11-22:40:40.077 9858 Delete type=2 #916
+2024/01/11-22:40:40.077 9858 Delete type=2 #917
+2024/01/11-22:40:40.077 9858 Delete type=2 #915
+2024/01/11-22:40:40.078 9858 Delete type=2 #930
+2024/01/11-22:40:40.078 9858 Delete type=2 #920
+2024/01/11-22:40:40.078 9858 Delete type=2 #918
+2024/01/11-22:40:40.078 9858 Delete type=2 #921
+2024/01/11-22:40:40.078 9858 Delete type=2 #914
+2024/01/11-22:40:40.078 9858 Delete type=2 #922
