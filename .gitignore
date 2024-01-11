@@ -72,3 +72,5 @@ typings/
 # Serverless directories
 .serverless
 
+# WhatsappWeb.js cache directories
+.wwebjs*
