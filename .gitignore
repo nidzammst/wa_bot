@@ -73,4 +73,5 @@ typings/
 .serverless
 
 # WhatsappWeb.js cache directories
-.wwebjs*
+.wwebjs_auth/
+.wwebjs_cache/
