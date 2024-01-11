@@ -1,0 +1,14 @@
+2024/01/11-23:55:14.993 1440 Reusing MANIFEST /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/11-23:55:14.994 1440 Recovering log #928
+2024/01/11-23:55:15.128 1440 Reusing old log /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000928.log 
+2024/01/11-23:57:59.470 146e Compacting 1@1 + 4@2 files
+2024/01/11-23:58:00.015 146e Generated table #944@1: 104808 keys, 2256092 bytes
+2024/01/11-23:58:00.437 146e Generated table #945@1: 104910 keys, 2255990 bytes
+2024/01/11-23:58:00.681 146e Generated table #946@1: 22078 keys, 476993 bytes
+2024/01/11-23:58:00.681 146e Compacted 1@1 + 4@2 files => 4989075 bytes
+2024/01/11-23:58:00.831 146e compacted to: files[ 0 0 14 0 0 0 0 ]
+2024/01/11-23:58:00.831 146e Delete type=2 #923
+2024/01/11-23:58:00.831 146e Delete type=2 #925
+2024/01/11-23:58:00.831 146e Delete type=2 #926
+2024/01/11-23:58:00.831 146e Delete type=2 #931
+2024/01/11-23:58:00.831 146e Delete type=2 #924

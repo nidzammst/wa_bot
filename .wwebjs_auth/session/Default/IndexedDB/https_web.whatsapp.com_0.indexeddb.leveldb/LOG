@@ -1,0 +1,37 @@
+2024/01/12-01:33:28.446 da1 Reusing MANIFEST /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/12-01:33:28.448 da1 Recovering log #928
+2024/01/12-01:33:28.620 da1 Reusing old log /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000928.log 
+2024/01/12-01:34:09.171 deb Level-0 table #949: started
+2024/01/12-01:34:10.027 deb Level-0 table #949: 1363396 bytes OK
+2024/01/12-01:34:10.080 deb Delete type=0 #928
+2024/01/12-01:34:23.670 da2 Compacting 1@0 + 0@1 files
+2024/01/12-01:34:23.730 da2 Generated table #950@0: 20410 keys, 481108 bytes
+2024/01/12-01:34:23.764 da2 Generated table #951@0: 218 keys, 4536 bytes
+2024/01/12-01:34:23.764 da2 Compacted 1@0 + 0@1 files => 485644 bytes
+2024/01/12-01:34:23.815 da2 compacted to: files[ 0 2 14 0 0 0 0 ]
+2024/01/12-01:34:23.816 da2 Delete type=2 #949
+2024/01/12-01:34:25.550 ded Compacting 1@1 + 10@2 files
+2024/01/12-01:34:26.041 ded Generated table #952@1: 67956 keys, 2255379 bytes
+2024/01/12-01:34:26.902 ded Generated table #953@1: 21905 keys, 2187340 bytes
+2024/01/12-01:34:27.058 ded Generated table #954@1: 1636 keys, 2152913 bytes
+2024/01/12-01:34:27.192 ded Generated table #955@1: 2378 keys, 2155871 bytes
+2024/01/12-01:34:27.338 ded Generated table #956@1: 3427 keys, 2171363 bytes
+2024/01/12-01:34:27.501 ded Generated table #957@1: 20991 keys, 2233586 bytes
+2024/01/12-01:34:27.653 ded Generated table #958@1: 25769 keys, 2258169 bytes
+2024/01/12-01:34:27.814 ded Generated table #959@1: 7377 keys, 2129382 bytes
+2024/01/12-01:34:27.977 ded Generated table #960@1: 54375 keys, 2190403 bytes
+2024/01/12-01:34:28.173 ded Generated table #961@1: 105052 keys, 2256383 bytes
+2024/01/12-01:34:28.217 ded Generated table #962@1: 7272 keys, 158066 bytes
+2024/01/12-01:34:28.217 ded Compacted 1@1 + 10@2 files => 22148855 bytes
+2024/01/12-01:34:28.286 ded compacted to: files[ 0 1 15 0 0 0 0 ]
+2024/01/12-01:34:28.287 ded Delete type=2 #932
+2024/01/12-01:34:28.287 ded Delete type=2 #941
+2024/01/12-01:34:28.287 ded Delete type=2 #950
+2024/01/12-01:34:28.287 ded Delete type=2 #938
+2024/01/12-01:34:28.287 ded Delete type=2 #936
+2024/01/12-01:34:28.287 ded Delete type=2 #934
+2024/01/12-01:34:28.287 ded Delete type=2 #940
+2024/01/12-01:34:28.287 ded Delete type=2 #937
+2024/01/12-01:34:28.287 ded Delete type=2 #935
+2024/01/12-01:34:28.287 ded Delete type=2 #939
+2024/01/12-01:34:28.287 ded Delete type=2 #933
