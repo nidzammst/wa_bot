@@ -663,35 +663,6 @@ client.on('message', (message) => {
         message.reply('Error in reading quotes.json. Please try again later.');
       }
     })
-  } else {
-    try {
-      const requesterData = temporaryDataArray.find((data) => data.waNumber === message.from)
-      if(!requesterData) {
-        return;
-      } else {
-        if(requesterData.category === 'bot-1' || requesterData.category === 'bot-4' || requesterData.category === 'bot-5' || requesterData.category === 'bot-6' || requesterData.category === 'bot-9' || requesterData.category === 'bot-10' || requesterData.category === 'bot-11' || requesterData.category === 'bot-12' || requesterData.category === 'bot-13' || requesterData.category === 'bot-14' || requesterData.category === 'bot-15') {
-          const correctAnswer = requesterData.answer.toLowerCase() === message.body.toLowerCase();
-          if(correctAnswer) {
-            message.reply(`Bravo ${requesterData.name}! Anda sudah menjawab dengan benar!\nSelamat anda berhak mendapatkan sebuah *HADIAH* yang akan dikirimkan ke rumah anda, jika tidak datang juga berarti anda ditipu...`);
-          } else {
-            message.reply(`Sayang sekali jawaban anda masih salah\nJawaban: *${requesterData.answer}*`)
-          }
-        } else if(requesterData.category === 'bot-2' || requesterData.category === 'bot-7') {
-          const correctAnswer = requesterData.answer.toLowerCase() === message.body.toLowerCase();
-          if(correctAnswer) {
-            message.reply(`${requesterData.description}\nBravo! Anda sudah menjawab dengan benar!\nSelamat anda berhak mendapatkan sebuah *HADIAH* yang akan dikirimkan ke rumah anda, jika tidak datang juga berarti anda sudah tertipu`);
-          } else {
-            message.reply(`Sayang sekali jawaban anda masih salah\nJawaban: *${requesterData.answer}*\n👉: ${requesterData.description}`)
-          }
-        }
-      }
-      removeDataByWaNumber(message.from)
-    }
-    catch (error) {
-      console.error('Error in reading bucin.json:', error.message);
-      // Handle the error as needed, e.g., reply with an error message to the user
-      message.reply('Error in reading bucin.json. Please try again later.');
-    }
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-22') {
 
     const handleChatData = async (err, data) => {
