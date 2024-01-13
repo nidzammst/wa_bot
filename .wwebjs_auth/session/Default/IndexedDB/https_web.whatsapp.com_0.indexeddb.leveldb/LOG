@@ -1,37 +1,39 @@
-2024/01/12-01:33:28.446 da1 Reusing MANIFEST /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/12-01:33:28.448 da1 Recovering log #928
-2024/01/12-01:33:28.620 da1 Reusing old log /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000928.log 
-2024/01/12-01:34:09.171 deb Level-0 table #949: started
-2024/01/12-01:34:10.027 deb Level-0 table #949: 1363396 bytes OK
-2024/01/12-01:34:10.080 deb Delete type=0 #928
-2024/01/12-01:34:23.670 da2 Compacting 1@0 + 0@1 files
-2024/01/12-01:34:23.730 da2 Generated table #950@0: 20410 keys, 481108 bytes
-2024/01/12-01:34:23.764 da2 Generated table #951@0: 218 keys, 4536 bytes
-2024/01/12-01:34:23.764 da2 Compacted 1@0 + 0@1 files => 485644 bytes
-2024/01/12-01:34:23.815 da2 compacted to: files[ 0 2 14 0 0 0 0 ]
-2024/01/12-01:34:23.816 da2 Delete type=2 #949
-2024/01/12-01:34:25.550 ded Compacting 1@1 + 10@2 files
-2024/01/12-01:34:26.041 ded Generated table #952@1: 67956 keys, 2255379 bytes
-2024/01/12-01:34:26.902 ded Generated table #953@1: 21905 keys, 2187340 bytes
-2024/01/12-01:34:27.058 ded Generated table #954@1: 1636 keys, 2152913 bytes
-2024/01/12-01:34:27.192 ded Generated table #955@1: 2378 keys, 2155871 bytes
-2024/01/12-01:34:27.338 ded Generated table #956@1: 3427 keys, 2171363 bytes
-2024/01/12-01:34:27.501 ded Generated table #957@1: 20991 keys, 2233586 bytes
-2024/01/12-01:34:27.653 ded Generated table #958@1: 25769 keys, 2258169 bytes
-2024/01/12-01:34:27.814 ded Generated table #959@1: 7377 keys, 2129382 bytes
-2024/01/12-01:34:27.977 ded Generated table #960@1: 54375 keys, 2190403 bytes
-2024/01/12-01:34:28.173 ded Generated table #961@1: 105052 keys, 2256383 bytes
-2024/01/12-01:34:28.217 ded Generated table #962@1: 7272 keys, 158066 bytes
-2024/01/12-01:34:28.217 ded Compacted 1@1 + 10@2 files => 22148855 bytes
-2024/01/12-01:34:28.286 ded compacted to: files[ 0 1 15 0 0 0 0 ]
-2024/01/12-01:34:28.287 ded Delete type=2 #932
-2024/01/12-01:34:28.287 ded Delete type=2 #941
-2024/01/12-01:34:28.287 ded Delete type=2 #950
-2024/01/12-01:34:28.287 ded Delete type=2 #938
-2024/01/12-01:34:28.287 ded Delete type=2 #936
-2024/01/12-01:34:28.287 ded Delete type=2 #934
-2024/01/12-01:34:28.287 ded Delete type=2 #940
-2024/01/12-01:34:28.287 ded Delete type=2 #937
-2024/01/12-01:34:28.287 ded Delete type=2 #935
-2024/01/12-01:34:28.287 ded Delete type=2 #939
-2024/01/12-01:34:28.287 ded Delete type=2 #933
+2024/01/13-15:34:30.915 415a Reusing MANIFEST /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/13-15:34:30.916 415a Recovering log #1475
+2024/01/13-15:34:31.225 415a Reusing old log /home/musthafa/ngoding/MERN/wa_bot/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/001475.log 
+2024/01/13-15:37:23.145 4178 Level-0 table #1481: started
+2024/01/13-15:37:23.253 4178 Level-0 table #1481: 1789739 bytes OK
+2024/01/13-15:37:23.306 4178 Delete type=0 #1475
+2024/01/13-15:37:23.391 417a Compacting 1@1 + 2@2 files
+2024/01/13-15:37:23.666 417a Generated table #1482@1: 58184 keys, 2245318 bytes
+2024/01/13-15:37:23.890 417a Generated table #1483@1: 43882 keys, 2189408 bytes
+2024/01/13-15:37:23.890 417a Compacted 1@1 + 2@2 files => 4434726 bytes
+2024/01/13-15:37:23.941 417a compacted to: files[ 0 0 2 0 0 0 0 ]
+2024/01/13-15:37:23.941 417a Delete type=2 #1478
+2024/01/13-15:37:23.941 417a Delete type=2 #1477
+2024/01/13-15:37:23.941 417a Delete type=2 #1481
+2024/01/13-15:40:19.254 417a Level-0 table #1485: started
+2024/01/13-15:40:19.361 417a Level-0 table #1485: 1456388 bytes OK
+2024/01/13-15:40:19.412 417a Delete type=0 #1480
+2024/01/13-15:40:32.151 412b Compacting 1@1 + 2@2 files
+2024/01/13-15:40:32.433 412b Generated table #1486@1: 57346 keys, 2266108 bytes
+2024/01/13-15:40:32.567 412b Generated table #1487@1: 36698 keys, 2194101 bytes
+2024/01/13-15:40:32.624 412b Generated table #1488@1: 11926 keys, 237973 bytes
+2024/01/13-15:40:32.624 412b Compacted 1@1 + 2@2 files => 4698182 bytes
+2024/01/13-15:40:32.674 412b compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/01/13-15:40:32.675 412b Delete type=2 #1483
+2024/01/13-15:40:32.675 412b Delete type=2 #1485
+2024/01/13-15:40:32.675 412b Delete type=2 #1482
+2024/01/13-15:45:08.841 4246 Level-0 table #1490: started
+2024/01/13-15:45:09.255 4246 Level-0 table #1490: 1513215 bytes OK
+2024/01/13-15:45:09.317 4246 Delete type=0 #1484
+2024/01/13-15:45:29.104 417a Compacting 1@1 + 3@2 files
+2024/01/13-15:45:29.386 417a Generated table #1491@1: 56003 keys, 2273435 bytes
+2024/01/13-15:45:29.498 417a Generated table #1492@1: 32453 keys, 2189391 bytes
+2024/01/13-15:45:29.565 417a Generated table #1493@1: 22823 keys, 617263 bytes
+2024/01/13-15:45:29.565 417a Compacted 1@1 + 3@2 files => 5080089 bytes
+2024/01/13-15:45:29.616 417a compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/01/13-15:45:29.616 417a Delete type=2 #1488
+2024/01/13-15:45:29.616 417a Delete type=2 #1486
+2024/01/13-15:45:29.616 417a Delete type=2 #1490
+2024/01/13-15:45:29.616 417a Delete type=2 #1487
