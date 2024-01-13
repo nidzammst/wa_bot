@@ -36,6 +36,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+# WhatsappWeb.js cache directories
+.wwebjs_auth/
+.wwebjs_cache/
+
 # TypeScript v1 declaration files
 typings/
 
@@ -71,7 +75,3 @@ typings/
 
 # Serverless directories
 .serverless
-
-# WhatsappWeb.js cache directories
-.wwebjs_auth/
-.wwebjs_cache/
