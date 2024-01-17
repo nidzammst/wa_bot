@@ -1,5 +1,5 @@
 
-# WA_BOT by Ahmad Nidzam Musthafa
+# WA_BOT
 
 WhatsApp bot dengan berbagai macam fitur, menggunakan library [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js)
 
