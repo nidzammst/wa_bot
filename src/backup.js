@@ -69,23 +69,25 @@ const currentTimeWIB = new Intl.DateTimeFormat('id-ID', { timeStyle: 'short', ..
 
 let timeOfDay;
 
-if (currentTimeWIB >= 0 && currentTimeWIB < 12) {
+if (currentTime.getHours() >= 3 && currentTime.getHours() < 9) {
     timeOfDay = "Pagi"
-} else if (currentTimeWIB >= 12 && currentTimeWIB < 15) {
+} else if (currentTime.getHours() >= 9 && currentTime.getHours() < 15) {
     timeOfDay = "Siang"
-} else if (currentTimeWIB >= 15 && currentTimeWIB < 18) {
+} else if (currentTime.getHours() >= 15 && currentTime.getHours() < 18) {
     timeOfDay = "Sore"
 } else {
     timeOfDay = "Malam"
 }
+
 
 client.on('message', (message) => {
   if(message.body === 'hello') {
     message.reply('World');
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'myprivateproject') {
     message.reply(`Hai Selamat ${timeOfDay} Nidzam's Bot disini\nSilahkan pilih Bot:\n*bot-1:* Asah Otak\n*bot-2:* Cak Lontong\n*bot-3:* Family 100\n*bot-4:* Siapakah Aku\n*bot-5:* Susun Kata\n*bot-6:* Tebak Bendera\n*bot-7:* Tebak Gambar\n*bot-8:* Tebak Kabupaten\n*bot-9:* Tebak Kalimat\n*bot-10:* Tebak Kata\n*bot-11:* Tebak Kimia\n*bot-12:* Tebak Lagu\n*bot-13:* Tebak Lirik\n*bot-14:* Tebak Tebakan\n*bot-15:* Tebak Teka-Teki\n*bot-16:* Kata-kata Bucin\n*bot-17:* Kata-kata Motivasi\n*bot-18:* Kata-kata Renungan\n*bot-19:* Kata-kata Truth\n*bot-20:* Kata-kata Dare\n*bot-21:* Quotes\n*bot-22:* Meme Challenge\n\n\n*Silahkan tekan 'chat' untuk mengirim pesan...*`);
+  } else if(message.body.toLowerCase().replace(/\s/g, '') === 'chat') {
+      removeDataByWaNumber(message.from);
   } else if (message.body.toLowerCase().replace(/\s/g, '') === 'bot-1') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -119,7 +121,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'asahotak.json');
     fs.readFile(filePath, 'utf8', handleChatData);
   } else if (message.body.toLowerCase().replace(/\s/g, '') === 'bot-2') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -154,7 +155,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'caklontong.json');
     fs.readFile(filePath, 'utf8', handleChatData);
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-4') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -188,7 +188,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'siapakahaku.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-5') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -221,7 +220,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'susunkata.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-6') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -256,7 +254,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'tebakbendera.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-7') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -293,7 +290,6 @@ client.on('message', (message) => {
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-8') {
     message.reply("Not working😠...")
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-9') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -326,7 +322,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'tebakkalimat.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-10') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -359,7 +354,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'tebakkata.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-11') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -392,7 +386,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'tebakkimia.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-12') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -434,7 +427,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'tebaklagu.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-13') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -467,7 +459,6 @@ client.on('message', (message) => {
     const filePath = path.resolve(__dirname, 'constants', 'tebaklirik.json');
     fs.readFile(filePath, 'utf8', handleChatData)
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-14') {
-    removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
       try {
         if (err) {
@@ -673,7 +664,7 @@ client.on('message', (message) => {
       }
     })
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'bot-22') {
-    removeDataByWaNumber(message.from);
+
     const handleChatData = async (err, data) => {
       try {
         const flipData = await fetchMessageFromFlip();
@@ -698,7 +689,7 @@ client.on('message', (message) => {
 
     const filePath = path.resolve(__dirname, 'constants', 'asahotak.json');
     fs.readFile(filePath, 'utf8', handleChatData);
-  } else {
+  }  else {
     try {
       const requesterData = temporaryDataArray.find((data) => data.waNumber === message.from)
       if(!requesterData) {
