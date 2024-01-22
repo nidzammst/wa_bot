@@ -84,6 +84,12 @@ client.on('message', (message) => {
     message.reply('World');
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'myprivateproject') {
     message.reply(`Hai Selamat ${timeOfDay} Nidzam's Bot disini\nSilahkan pilih Bot:\n*bot-1:* Asah Otak\n*bot-2:* Cak Lontong\n*bot-3:* Family 100\n*bot-4:* Siapakah Aku\n*bot-5:* Susun Kata\n*bot-6:* Tebak Bendera\n*bot-7:* Tebak Gambar\n*bot-8:* Tebak Kabupaten\n*bot-9:* Tebak Kalimat\n*bot-10:* Tebak Kata\n*bot-11:* Tebak Kimia\n*bot-12:* Tebak Lagu\n*bot-13:* Tebak Lirik\n*bot-14:* Tebak Tebakan\n*bot-15:* Tebak Teka-Teki\n*bot-16:* Kata-kata Bucin\n*bot-17:* Kata-kata Motivasi\n*bot-18:* Kata-kata Renungan\n*bot-19:* Kata-kata Truth\n*bot-20:* Kata-kata Dare\n*bot-21:* Quotes\n*bot-22:* Meme Challenge\n\n\n*Silahkan tekan 'chat' untuk mengirim pesan...*`);
+  } else if(message.body.toLowerCase().replace(/\s/g, '') === 'quran') {
+    removeDataByWaNumber(message.from);
+    saveTemporaryData(null, null, "quran", message.from, message._data.notifyName, null)
+
+    message.reply('Mohon isi form berikut ini:\nSurat:\nAyat:\nTafsir:\nAudio:')
+    message.reply("Sebagai contoh, mohon isi formulir berikut ini:\nSurat: 24\nAyat: 35\nTafsir: ya(Ya/tidak/Tidak/✅/❌)\nAudio: tidak(Ya/tidak/Tidak/✅/❌)")
   } else if (message.body.toLowerCase().replace(/\s/g, '') === 'bot-1') {
     removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
@@ -718,7 +724,7 @@ client.on('message', (message) => {
           } else {
             message.reply(`Sayang sekali jawaban anda masih salah\nJawaban: *${requesterData.answer}*\n👉: ${requesterData.description}`)
           }
-        } if(requesterData.category === 'bot-22') {
+        } else if(requesterData.category === 'bot-22') {
           const [firstAnswer, secondAnswer] = message.body.split('\n').map(line => line.split(': ')[1])
           const sendImg = async () => {
             try{
@@ -732,6 +738,95 @@ client.on('message', (message) => {
             }
           }
           sendImg();
+        } else if(requesterData.category === 'quran') {
+          try {
+            const suratMatch = message.body.match(/Surat: (\d+)/i);
+            const ayatMatch = message.body.match(/Ayat: (\d+)/i);
+            const tafsirMatch = message.body.match(/Tafsir: (\S+)/i);
+            const audioMatch = message.body.match(/Audio: (\S+)/i);
+
+            const surat = suratMatch ? suratMatch[1] : null;
+            const ayat = ayatMatch ? ayatMatch[1] : null;
+
+            if(!surat || !ayat) {
+              message.reply()
+            }
+
+            let withAudio = false;
+
+            if (audioMatch) {
+              const audioValue = audioMatch[1].toLowerCase();
+              
+              // Menggunakan nilai boolean berdasarkan kemungkinan nilai Tafsir
+              if (audioValue.toLowerCase().replace(/\s/g, '') === 'ya' || audioValue.toLowerCase().replace(/\s/g, '') === '✅') {
+                  withAudio = true;
+              } else if (audioValue.toLowerCase().replace(/\s/g, '') === 'tidak' || audioValue.toLowerCase().replace(/\s/g, '') === '❌') {
+                  withAudio = false;
+              }
+            }
+            
+            let tafsir = false; // Inisialisasi nilai tafsir sebagai false secara default
+
+            if (tafsirMatch) {
+              const tafsirValue = tafsirMatch[1].toLowerCase();
+              
+              // Menggunakan nilai boolean berdasarkan kemungkinan nilai Tafsir
+              if (tafsirValue.toLowerCase().replace(/\s/g, '') === 'ya' || tafsirValue.toLowerCase().replace(/\s/g, '') === '✅') {
+                  tafsir = true;
+              } else if (tafsirValue.toLowerCase().replace(/\s/g, '') === 'tidak' || tafsirValue.toLowerCase().replace(/\s/g, '') === '❌') {
+                  tafsir = false;
+              }
+              const filePath = path.resolve(__dirname, 'constants', 'quran.json');
+              fs.readFile(filePath, 'utf8', (err, data) => {
+                try {
+                  if (err) {
+                    throw new Error(`Error reading file: ${err.message}`);
+                  }
+                  //Parse Json data
+                  const jsonData = JSON.parse(data);
+
+                  const checkSurat = jsonData[surat - 1];
+                  const checkAyat = checkSurat.verses[ayat - 1];
+                  const dataSurat = {...checkSurat}
+                  delete dataSurat.verses;
+
+                  const dataAyat = { ...checkAyat, surah: dataSurat };
+                  message.reply(`Q.S.${surat}:${ayat}: \n${dataAyat.text.arab}`)
+                  message.reply(`Terjemahan Q.S.${surat}:${ayat}: \n${dataAyat.translation.id}`)
+
+                  if(tafsir) {
+                    message.reply(`Tafsir Q.S.${surat}:${ayat}: \n${dataAyat.tafsir.id.long}`)
+                  }
+
+                  if(withAudio) {
+                    try {
+                      const sendQuranAudio = async () => {
+                        const media = await MessageMedia.fromUrl(dataAyat.audio.primary, {unsafeMime: true});
+                        message.reply(media)
+                      }
+                      sendQuranAudio()
+                    }
+                    catch (err) {
+                      throw new Error(err)
+                      message.reply('Error: Cant send Audio from url. Please try again later.');
+                    }
+                  }
+                }
+                catch (error) {
+                  console.error('Error in reading quran.json:', error.message);
+                  // Handle the error as needed, e.g., reply with an error message to the user
+                  message.reply('Error in reading quran.json. Please try again later.');
+                }
+              })
+            } else {
+              message.reply("Error: mohon ulangi lagi");
+            }
+          }
+          catch (error) {
+            console.error('Error:', error.message);
+            // Handle the error as needed, e.g., reply with an error message to the user
+            message.reply('Error:', error.message);
+          }
         }
       }
       removeDataByWaNumber(message.from);
