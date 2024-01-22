@@ -83,13 +83,13 @@ client.on('message', (message) => {
   if(message.body === 'hello') {
     message.reply('World');
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'myprivateproject') {
-    message.reply(`Hai Selamat ${timeOfDay} Nidzam's Bot disini\nSilahkan pilih Bot:\n*bot-1:* Asah Otak\n*bot-2:* Cak Lontong\n*bot-3:* Family 100\n*bot-4:* Siapakah Aku\n*bot-5:* Susun Kata\n*bot-6:* Tebak Bendera\n*bot-7:* Tebak Gambar\n*bot-8:* Tebak Kabupaten\n*bot-9:* Tebak Kalimat\n*bot-10:* Tebak Kata\n*bot-11:* Tebak Kimia\n*bot-12:* Tebak Lagu\n*bot-13:* Tebak Lirik\n*bot-14:* Tebak Tebakan\n*bot-15:* Tebak Teka-Teki\n*bot-16:* Kata-kata Bucin\n*bot-17:* Kata-kata Motivasi\n*bot-18:* Kata-kata Renungan\n*bot-19:* Kata-kata Truth\n*bot-20:* Kata-kata Dare\n*bot-21:* Quotes\n*bot-22:* Meme Challenge\n\n\n*Silahkan tekan 'chat' untuk mengirim pesan...*`);
+    message.reply(`Hai Selamat ${timeOfDay} Nidzam's Bot disini\nSilahkan pilih Bot:\n*bot-1:* Asah Otak\n*bot-2:* Cak Lontong\n*bot-3:* Family 100\n*bot-4:* Siapakah Aku\n*bot-5:* Susun Kata\n*bot-6:* Tebak Bendera\n*bot-7:* Tebak Gambar\n*bot-8:* Tebak Kabupaten\n*bot-9:* Tebak Kalimat\n*bot-10:* Tebak Kata\n*bot-11:* Tebak Kimia\n*bot-12:* Tebak Lagu\n*bot-13:* Tebak Lirik\n*bot-14:* Tebak Tebakan\n*bot-15:* Tebak Teka-Teki\n*bot-16:* Kata-kata Bucin\n*bot-17:* Kata-kata Motivasi\n*bot-18:* Kata-kata Renungan\n*bot-19:* Kata-kata Truth\n*bot-20:* Kata-kata Dare\n*bot-21:* Quotes\n*bot-22:* Meme Challenge\n*Quran:* Al-Qur'an (Arab, terhemahan, tafsir, dan murottal)`);
   } else if(message.body.toLowerCase().replace(/\s/g, '') === 'quran') {
     removeDataByWaNumber(message.from);
     saveTemporaryData(null, null, "quran", message.from, message._data.notifyName, null)
 
-    message.reply('Mohon isi form berikut ini:\nSurat:\nAyat:\nTafsir:\nAudio:')
-    message.reply("Sebagai contoh, mohon isi formulir berikut ini:\nSurat: 24\nAyat: 35\nTafsir: ya(Ya/tidak/Tidak/✅/❌)\nAudio: tidak(Ya/tidak/Tidak/✅/❌)")
+    message.reply('Mohon isi form berikut ini:\nSurat:\nAyat:\nTafsir:\nMurottal:')
+    message.reply("Sebagai contoh, mohon isi formulir berikut ini:\nSurat: 24\nAyat: 35\nTafsir: ya(Ya/tidak/Tidak/✅/❌)\nMurottal: tidak(Ya/tidak/Tidak/✅/❌)")
   } else if (message.body.toLowerCase().replace(/\s/g, '') === 'bot-1') {
     removeDataByWaNumber(message.from);
     const handleChatData = async (err, data) => {
@@ -743,7 +743,7 @@ client.on('message', (message) => {
             const suratMatch = message.body.match(/Surat: (\d+)/i);
             const ayatMatch = message.body.match(/Ayat: (\d+)/i);
             const tafsirMatch = message.body.match(/Tafsir: (\S+)/i);
-            const audioMatch = message.body.match(/Audio: (\S+)/i);
+            const murottalMatch = message.body.match(/Murottal: (\S+)/i);
 
             const surat = suratMatch ? suratMatch[1] : null;
             const ayat = ayatMatch ? ayatMatch[1] : null;
@@ -752,16 +752,16 @@ client.on('message', (message) => {
               message.reply()
             }
 
-            let withAudio = false;
+            let withMurottal = false;
 
-            if (audioMatch) {
-              const audioValue = audioMatch[1].toLowerCase();
+            if (murottalMatch) {
+              const murottalValue = murottalMatch[1].toLowerCase();
               
               // Menggunakan nilai boolean berdasarkan kemungkinan nilai Tafsir
-              if (audioValue.toLowerCase().replace(/\s/g, '') === 'ya' || audioValue.toLowerCase().replace(/\s/g, '') === '✅') {
-                  withAudio = true;
-              } else if (audioValue.toLowerCase().replace(/\s/g, '') === 'tidak' || audioValue.toLowerCase().replace(/\s/g, '') === '❌') {
-                  withAudio = false;
+              if (murottalValue.toLowerCase().replace(/\s/g, '') === 'ya' || murottalValue.toLowerCase().replace(/\s/g, '') === '✅') {
+                  withMurottal = true;
+              } else if (murottalValue.toLowerCase().replace(/\s/g, '') === 'tidak' || murottalValue.toLowerCase().replace(/\s/g, '') === '❌') {
+                  withMurottal = false;
               }
             }
             
@@ -798,7 +798,7 @@ client.on('message', (message) => {
                     message.reply(`Tafsir Q.S.${surat}:${ayat}: \n${dataAyat.tafsir.id.long}`)
                   }
 
-                  if(withAudio) {
+                  if(withMurottal) {
                     try {
                       const sendQuranAudio = async () => {
                         const media = await MessageMedia.fromUrl(dataAyat.audio.primary, {unsafeMime: true});
